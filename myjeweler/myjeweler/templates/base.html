@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Jeweler</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/all.css">
+</head>
+<body>
+	<div class="wrapper">
+		<ul class="main_menu">
+		<li{% block index_class %}{% endblock %}><a href="/" class="active">Главная</a></li>
+		<li{% block rings_class %}{% endblock %}><a href="/rings/">Кольца</a></li>
+		<li{% block earrings_class %}{% endblock %}><a href="/earrings/">Серьги</a></li>
+		<li{% block pendants_class %}{% endblock %}><a href="/pendants/">Подвесы</a></li>
+		</ul>
+		<div class="content">
+			{% block content %}
+
+			{% endblock content %}
+		</div>
+	</div>
+</body>
+</html>
