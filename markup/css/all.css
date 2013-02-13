@@ -1,0 +1,32 @@
+body{
+	font: 16px/18px Arial, Helvetica, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+.wrapper {
+	height: 700px;
+	background: #ccc;
+	padding: 0;
+	margin: 0;
+}
+.main_menu{
+	background: #000;
+	overflow: hidden;
+	margin: 0;
+}
+.main_menu li{
+	font-size: 16px;
+	float: left;
+	margin: 0 0 0 10px;
+	padding: 10px 0;
+}
+.main_menu a{
+	color: blue;
+	text-decoration: none;
+}
+.content{
+	margin: 0 0 0 10px;
+}
+ .main_menu .active{
+	color:#fff;
+}
