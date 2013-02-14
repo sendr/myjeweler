@@ -11,10 +11,20 @@
 		<li><a href="/earrings/" {% block earrings_class %}{% endblock %}>Серьги</a></li>
 		<li><a href="/pendants/" {% block pendants_class %}{% endblock %}>Подвесы</a></li>
 		</ul>
-		<div class="content">
-			{% block content %}
+		<div class="container">
+		<div class="sidebar">
+			<ul>
+				<li><a href="/" {% block index_class_ %}{% endblock %}>Home</a></li>
+				<li><a href="/rings/" {% block rings_class_ %}{% endblock %}>Rings</a></li>
+				<li><a href="/earrings/" {% block earrings_class_ %}{% endblock %}>Earrings</a></li>
+				<li><a href="/pendants/" {% block pendants_class_ %}{% endblock %}>Pendants</a></li>
+			</ul>
+		</div>
+			<div class="content">
+				{% block content %}
 
-			{% endblock content %}
+				{% endblock content %}
+			</div>
 		</div>
 	</div>
 </body>
