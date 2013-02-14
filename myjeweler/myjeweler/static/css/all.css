@@ -4,7 +4,6 @@ body{
 	margin: 0;
 }
 .wrapper {
-	height: 700px;
 	background: #ccc;
 	padding: 0;
 	margin: 0;
@@ -56,4 +55,10 @@ body{
 }
 .sidebar a{
 	text-decoration: none;
+}
+img{
+	text-align: top;
+	width: 500px;
+	height: 700px;
+	margin: 10px;
 }
