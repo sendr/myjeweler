@@ -8,7 +8,8 @@ urlpatterns = patterns('',
 	url(r'^$', 'myjeweler.views.index', name='index'),
 	url(r'^rings/$', 'myjeweler.views.rings', name='rings'),
 	url(r'^earrings/$', 'myjeweler.views.earrings', name='earrings'),
-	url(r'^pendants/$', 'myjeweler.views.pendants', name='pendants')
+	url(r'^pendants/$', 'myjeweler.views.pendants', name='pendants'),
+    url(r'^rings/photo/$', 'myjeweler.views.rings_photo', name='photo1')
 
 
     # Examples:
