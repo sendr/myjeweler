@@ -25,9 +25,11 @@ body{
 	text-decoration: none;
 }
 .content{
-	float: right;
+	float: left;
 	width: 600px;
-	margin: 0 0 0 10px;
+	margin: 10px 0 0 10px;
+	border-left: 1px solid #000;
+	overflow: hidden;
 }
  .main_menu .active{
 	color:#fff;
@@ -45,7 +47,7 @@ body{
 .sidebar{
 	float: left;
 	width: 200px;
-	border-right: 1px solid #000;
+	overflow: hidden;
 }
 .sidebar ul{
 	list-style: none;
@@ -56,9 +58,19 @@ body{
 .sidebar a{
 	text-decoration: none;
 }
+.right{
+	float: right;
+	margin: 10px 10px 0 0;
+}
 img{
 	text-align: top;
 	width: 500px;
 	height: 700px;
 	margin: 10px;
+}
+h3{
+	margin: 0 0 10px 10px;
+}
+p{
+	margin: 0 0 10px 10px;
 }

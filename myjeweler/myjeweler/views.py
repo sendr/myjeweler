@@ -16,3 +16,9 @@ def pendants(request):
 
 def rings_photo(request):
 	return direct_to_template(request, "photo.html")
+
+def enter(request):
+	return direct_to_template(request, "enter.html")
+
+def registr(request):
+	return direct_to_template(request, "registr.html")
