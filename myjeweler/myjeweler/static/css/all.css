@@ -5,7 +5,7 @@ body{
 }
 .wrapper {
 	background: #ccc;
-	padding: 0;
+	padding: 0 0 10px;
 	margin: 0;
 }
 .main_menu{
@@ -27,9 +27,11 @@ body{
 .content{
 	float: left;
 	width: 680px;
-	margin: 10px 0 0 10px;
-	border-left: 1px solid #000;
+	margin: 0;
+	padding: 20px 0 20px; 
 	overflow: hidden;
+	text-align: center;
+	border-left: 1px solid #000;
 }
 .content a{
 	text-decoration: none;
@@ -74,6 +76,19 @@ body{
 }
 .right a:hover{
 	text-decoration: underline;
+}
+.block_form{
+	margin: 10px 30px;
+	overflow: hidden;
+}
+.form_p{
+	float: left;
+}
+.form_p p{
+	margin: 2px 0 18px;
+}
+.form_form{
+	float: left;
 }
 img{
 	text-align: top;

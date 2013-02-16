@@ -4,10 +4,21 @@
 
 
 {% block content %}
-			<form action="">
-				<p><input type="text" value="login" onFocus="if(this.value=='login') this.value='';" onBlur="if(!this.value) this.value='login';"></p>
-				<p><input type="text" value="email" onFocus="if(this.value=='email') this.value='';" onBlur="if(!this.value) this.value='email';"></p>
-				<p><input type="password" value="password" onFocus="if(this.value=='password') this.value='';" onBlur="if(!this.value) this.value='password';"></p>
-				<p><input type="submit" value="send"></p>
-			</form>
+		<div class="block_form">
+			<div class="form_p">
+				<p>Введите имя:</p>
+				<p>Введите email:</p>
+				<p>Введите пароль:</p>
+				<p>Подтвердите пароль:</p>
+			</div>
+			<div class="form_form">
+				<form action="">
+					<p><input type="text" value="login" onFocus="if(this.value=='login') this.value='';" onBlur="if(!this.value) this.value='login';"></p>
+					<p><input type="text" value="email" onFocus="if(this.value=='email') this.value='';" onBlur="if(!this.value) this.value='email';"></p>
+					<p><input type="password" value="password" onFocus="if(this.value=='password') this.value='';" onBlur="if(!this.value) this.value='password';"></p>
+					<p><input type="password" value="password" onFocus="if(this.value=='password') this.value='';" onBlur="if(!this.value) this.value='password';"></p>
+					<p><input type="submit" value="send"></p>
+				</form>
+			</div>
+		</div>
 {% endblock content %}		
