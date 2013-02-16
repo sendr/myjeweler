@@ -26,10 +26,16 @@ body{
 }
 .content{
 	float: left;
-	width: 600px;
+	width: 680px;
 	margin: 10px 0 0 10px;
 	border-left: 1px solid #000;
 	overflow: hidden;
+}
+.content a{
+	text-decoration: none;
+}
+.content a:hover{
+	text-decoration: underline;
 }
  .main_menu .active{
 	color:#fff;
@@ -59,13 +65,20 @@ body{
 	text-decoration: none;
 }
 .right{
+	font-size: 12px;
 	float: right;
-	margin: 10px 10px 0 0;
+	margin: 10px 15px 0 0;
+}
+.right a{
+	margin: 0 10px 0 0;
+}
+.right a:hover{
+	text-decoration: underline;
 }
 img{
 	text-align: top;
-	width: 500px;
-	height: 700px;
+	width: 670px;
+	height: 800px;
 	margin: 10px;
 }
 h3{
