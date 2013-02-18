@@ -9,9 +9,10 @@ urlpatterns = patterns('',
 	url(r'^rings/$', 'myjeweler.views.rings', name='rings'),
 	url(r'^earrings/$', 'myjeweler.views.earrings', name='earrings'),
 	url(r'^pendants/$', 'myjeweler.views.pendants', name='pendants'),
-    url(r'^rings/photo/$', 'myjeweler.views.rings_photo', name='photo1'),
+    url(r'^rings/photo_rings1/$', 'myjeweler.views.photo_rings1', name='photo1'),
     url(r'^enter/$', 'myjeweler.views.enter', name='enter_to'),
     url(r'^registration/$', 'myjeweler.views.registration', name='registration'),
+    url(r'^earrings/photo_earrings1/$', 'myjeweler.views.photo_earrings1', name='photo_earrings1'),
 
 
     # Examples:

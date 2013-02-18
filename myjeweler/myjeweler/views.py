@@ -14,8 +14,11 @@ def earrings(request):
 def pendants(request):
 	return direct_to_template(request, "pendants.html")
 
-def rings_photo(request):
-	return direct_to_template(request, "photo.html")
+def photo_rings1(request):
+	return direct_to_template(request, "photo_rings1.html")
+
+def photo_earrings1(request):
+	return direct_to_template(request, "photo_earrings1.html")
 
 def enter(request):
 	return direct_to_template(request, "enter.html")
