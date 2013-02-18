@@ -20,5 +20,5 @@ def rings_photo(request):
 def enter(request):
 	return direct_to_template(request, "enter.html")
 
-def registr(request):
-	return direct_to_template(request, "registr.html")
+def registration(request):
+	return direct_to_template(request, "registration.html")

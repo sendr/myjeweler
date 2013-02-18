@@ -11,7 +11,7 @@ urlpatterns = patterns('',
 	url(r'^pendants/$', 'myjeweler.views.pendants', name='pendants'),
     url(r'^rings/photo/$', 'myjeweler.views.rings_photo', name='photo1'),
     url(r'^enter/$', 'myjeweler.views.enter', name='enter_to'),
-    url(r'^registr/$', 'myjeweler.views.registr', name='registr'),
+    url(r'^registration/$', 'myjeweler.views.registration', name='registration'),
 
 
     # Examples:
