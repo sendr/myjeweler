@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^enter/$', 'myjeweler.views.enter', name='enter_to'),
     url(r'^registration/$', 'myjeweler.views.registration', name='registration'),
     url(r'^earrings/photo_earrings1/$', 'myjeweler.views.photo_earrings1', name='photo_earrings1'),
+    url(r'^rings/photo_rings1/photo1/$', 'myjeweler.views.photo1', name='photo1'),
 
 
     # Examples:

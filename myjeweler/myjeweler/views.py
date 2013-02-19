@@ -25,3 +25,6 @@ def enter(request):
 
 def registration(request):
 	return direct_to_template(request, "registration.html")
+
+def photo1(request):
+	return direct_to_template(request, "photo1.html")	
