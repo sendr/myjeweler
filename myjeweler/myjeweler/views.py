@@ -27,4 +27,7 @@ def registration(request):
 	return direct_to_template(request, "registration.html")
 
 def photo1(request):
-	return direct_to_template(request, "photo1.html")	
+	return direct_to_template(request, "photo1.html")
+
+def employees(request):
+	return direct_to_template(request, "employees.html")

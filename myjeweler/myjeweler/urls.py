@@ -1,19 +1,24 @@
 from django.conf.urls import patterns, include, url
+from django.contrib import admin
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
-	url(r'^$', 'myjeweler.views.index', name='index'),
-	url(r'^rings/$', 'myjeweler.views.rings', name='rings'),
-	url(r'^earrings/$', 'myjeweler.views.earrings', name='earrings'),
-	url(r'^pendants/$', 'myjeweler.views.pendants', name='pendants'),
-    url(r'^rings/photo_rings1/$', 'myjeweler.views.photo_rings1', name='photo1'),
-    url(r'^enter/$', 'myjeweler.views.enter', name='enter_to'),
-    url(r'^registration/$', 'myjeweler.views.registration', name='registration'),
-    url(r'^earrings/photo_earrings1/$', 'myjeweler.views.photo_earrings1', name='photo_earrings1'),
-    url(r'^rings/photo_rings1/photo1/$', 'myjeweler.views.photo1', name='photo1'),
+admin.autodiscover()
+
+urlpatterns = patterns('myjeweler.views',
+	url(r'^$', 'index', name='index'),
+	url(r'^rings/$', 'rings', name='rings'),
+	url(r'^earrings/$', 'earrings', name='earrings'),
+	url(r'^pendants/$', 'pendants', name='pendants'),
+    url(r'^rings/photo_rings1/$', 'photo_rings1', name='photo1'),
+    url(r'^enter/$', 'enter', name='enter_to'),
+    url(r'^registration/$', 'registration', name='registration'),
+    url(r'^earrings/photo_earrings1/$', 'photo_earrings1', name='photo_earrings1'),
+    url(r'^rings/photo_rings1/photo1/$', 'photo1', name='photo1'),
+    url(r'^employees/$', 'employees', name='employees'),
+    url(r'^admin/', include(admin.site.urls)),
 
 
     # Examples:
