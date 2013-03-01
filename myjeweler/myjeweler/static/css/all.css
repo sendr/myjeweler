@@ -90,10 +90,19 @@ body{
 .form_form{
 	float: left;
 }
+.image{
+	margin: 20px auto;
+	width: 800px;
+	height: 1000px;
+}
+.image img{
+	width: 800px;
+	height: 1000px;
+}
 img{
 	text-align: top;
-	width: 670px;
-	height: 800px;
+	width: 260px;
+	height: 390px;
 	margin: 10px;
 }
 h3{
