@@ -10,7 +10,7 @@
 
 		{% for employee in employees %}
 			<ul>
-				<li><a href="">{{ employee.first_name }} {{ employee.last_name }}</a></li>
+				<li><a href="">{{ forloop.counter }}. {{ employee.first_name }} {{ employee.last_name }}</a></li>
 			</ul>
 		{% endfor %}
 {% endblock content %}
