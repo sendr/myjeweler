@@ -4,8 +4,11 @@
 
 
 {% block content %}
-			<h3><a href="">Управляющий персонал</a></h3>
-			<p>Бухгалтерия, учет и прочее ....</p>
-			<h3><a href="">Персонал производства</a></h3>
-			<p>Холопы (т.е. мы)</p>
+
+			{% for group in groups %}
+			<h3><a href="/employees_group_view/employees_list/{{ group.id }}">
+			 {{ forloop.counter }}. {{ group.name }}</a></h3>
+			
+			{% endfor %}
+
 {% endblock content %}
