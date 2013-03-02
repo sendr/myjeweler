@@ -3,6 +3,7 @@ from django.contrib import admin
 
 admin.autodiscover()
 
+
 urlpatterns = patterns('myjeweler.views',
 	url(r'^$', 'index', name='index'),
 	url(r'^rings/$', 'rings', name='rings'),
@@ -14,6 +15,8 @@ urlpatterns = patterns('myjeweler.views',
     url(r'^earrings/photo_earrings1/$', 'photo_earrings1', name='photo_earrings1'),
     url(r'^rings/photo_rings1/photo1/$', 'photo1', name='photo1'),
     url(r'^employees/$', 'employees', name='employees'),
+
+    url(r'^admin/', include(admin.site.urls)),
 
 
     # Examples:
