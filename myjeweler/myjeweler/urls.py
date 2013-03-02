@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^earrings/photo_earrings1/$', 'myjeweler.views.photo_earrings1', name='photo_earrings1'),
     url(r'^rings/photo_rings1/photo1/$', 'myjeweler.views.photo1', name='photo1'),
 
-    url(r'^employees_group_view/$', 'myjeweler.apps.employees.views.employees_group_view', name ='employees_group_view'),
+    url(r'^employees_group_view/$', include('myjeweler.apps.employees.urls')),
     url(r'^employees_group_view/employees_list/(?P<id>\d+)/$', 'myjeweler.apps.employees.views.employees_list', name = 'employees_list'),
 
 
