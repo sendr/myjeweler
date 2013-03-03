@@ -17,3 +17,8 @@ def employees_list(request, id):
 	return render(request, "employees_item.html",
 		{'employees': employees,
 		'group': group})
+
+def employee_one(request, id):
+	employee = get_object_or_404(Employee, id=id)
+	return render(request, "employee_one.html",
+				{'employee': employee})

@@ -1,0 +1,16 @@
+{% extends "employees.html" %}
+
+{% block employee_class %} class="active" {% endblock %}
+
+
+{% block content %}
+
+
+		<h3>{{ group.name }}</h3>
+
+		
+			<ul>
+				<li> {{ employee }} {{ group.name }}</li>
+			</ul>
+		
+{% endblock content %}
