@@ -6,11 +6,12 @@
 {% block content %}
 
 
-		<h3>{{ group.name }}</h3>
+		
 
 		
 			<ul>
-				<li> {{ employee }} {{ group.name }}</li>
+				<li> <h3>{{ employee }}</h3> </li>
+				<li>Пренадлежит группе : <strong>{{ employee.group.name }}</strong></li>				
 			</ul>
 		
 {% endblock content %}

@@ -36,6 +36,9 @@ body{
 .content a{
 	text-decoration: none;
 }
+.content li{
+	list-style: none;
+}
 .content a:hover{
 	text-decoration: underline;
 }
