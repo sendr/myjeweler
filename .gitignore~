@@ -1,5 +1,6 @@
 *.log
 *.pot
 *.pyc
+.gitignore~
 .gitignore
-tt.db
+requirements.txt

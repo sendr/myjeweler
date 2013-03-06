@@ -1,4 +1,7 @@
 *.log
 *.pot
 *.pyc
-
+.gitignore~
+.gitignore
+requirements.txt
+requirements.txt~

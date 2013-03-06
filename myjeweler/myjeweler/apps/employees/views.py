@@ -1,4 +1,4 @@
-from django.views.generic.simple import direct_to_template
+
 from django.shortcuts import render, get_object_or_404
 from myjeweler.apps.employees.models import Group, Employee
 
