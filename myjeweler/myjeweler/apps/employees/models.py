@@ -13,6 +13,11 @@ class Employee(models.Model):
 	first_name = models.CharField(max_length = 30)
 	last_name = models.CharField(max_length = 30)
 
+	skype = models.CharField(max_length = 255, blank = True, null = True)
+	email = models.EmailField(max_length = 255, blank = True, null = True)
+	github = models.URLField(max_length = 255, blank = True, null = True)
+	cell = models.CharField(max_length = 15, blank = True, null = True)
+
 	def __unicode__(self):
 		return " %s %s" % (self.first_name, self.last_name)
 
