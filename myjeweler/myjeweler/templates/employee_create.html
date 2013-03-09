@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block employee_create_class %} class="active" {% endblock %}
+
+
+{% block content %}
+	<form action='GET'>
+		{{ form }}
+		<input type='submit' value='submit'/>
+	</form>
+
+{% endblock content %}
