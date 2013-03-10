@@ -10,7 +10,7 @@
 
 		{% for employee in employees %}
 			<ul>
-				<li><a href="/employees_group_view/{{ employee.id }}">{{ forloop.counter }}. {{ employee.first_name }} {{ employee.last_name }}</a></li>
+				<li><a href="{% url 'employee_one' employee.id %}">{{ forloop.counter }}. {{ employee.first_name }} {{ employee.last_name }}</a></li>
 			</ul>
 		{% endfor %}
 {% endblock content %}

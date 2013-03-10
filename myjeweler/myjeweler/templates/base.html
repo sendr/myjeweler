@@ -6,26 +6,26 @@
 <body>
 	<div class="wrapper">
 		<ul class="main_menu">
-		<li><a href="/" {% block index_class %}{% endblock %}>Главная</a></li>
-		<li><a href="/rings/" {% block rings_class %}{% endblock %}>Кольца</a></li>
-		<li><a href="/earrings/" {% block earrings_class %}{% endblock %}>Серьги</a></li>
-		<li><a href="/pendants/" {% block pendants_class %}{% endblock %}>Подвесы</a></li>
-		<li><a href="/employees_group_view/employees_list/"{% block employee_list_class %}{% endblock %}>Список сотрудников</a></li>
-		<li><a href="/employees_group_view/"{% block employee_class %}{% endblock %}>Категория сотрудников</a></li>
-		<li><a href="/create/"{% block employee_create_class %}{% endblock %}>Create</a></li>
+		<li><a href="{% url 'index' %}" {% block index_class %}{% endblock %}>Главная</a></li>
+		<li><a href="{% url 'rings' %}" {% block rings_class %}{% endblock %}>Кольца</a></li>
+		<li><a href="{% url 'earrings' %}" {% block earrings_class %}{% endblock %}>Серьги</a></li>
+		<li><a href="{% url 'pendants' %}" {% block pendants_class %}{% endblock %}>Подвесы</a></li>
+		<li><a href="{% url 'employees_list' %}"{% block employee_list_class %}{% endblock %}>Список сотрудников</a></li>
+		<li><a href="{% url 'employees_group_view'%}"{% block employee_class %}{% endblock %}>Категория сотрудников</a></li>
+		<li><a href="{% url 'create' %}"{% block employee_create_class %}{% endblock %}>Create</a></li>
 			<div class="right">
 				<a href="">Гость</a>
-				<a href="/enter/"{% block enter_class %}{% endblock %}>Вход</a>
-				<a href="/registration/" {% block registration_class %}{% endblock %}>Регистрация</a>
+				<a href="{% url 'enter' %}"{% block enter_class %}{% endblock %}>Вход</a>
+				<a href="{% url 'registration' %}" {% block registration_class %}{% endblock %}>Регистрация</a>
 			</div>
 		</ul>
 		<div class="container">
 		<div class="sidebar">
 			<ul>
 				<li><a href="/" {% block index_class_ %}{% endblock %}>Home</a></li>
-				<li><a href="/rings/" {% block rings_class_ %}{% endblock %}>Rings</a></li>
-				<li><a href="/earrings/" {% block earrings_class_ %}{% endblock %}>Earrings</a></li>
-				<li><a href="/pendants/" {% block pendants_class_ %}{% endblock %}>Pendants</a></li>
+				<li><a href="{% url 'rings' %}" {% block rings_class_ %}{% endblock %}>Rings</a></li>
+				<li><a href="{% url 'earrings' %}" {% block earrings_class_ %}{% endblock %}>Earrings</a></li>
+				<li><a href="{% url 'pendants' %}" {% block pendants_class_ %}{% endblock %}>Pendants</a></li>
 			</ul>
 		</div>
 			<div class="content">
