@@ -29,10 +29,12 @@ def	employees_list(request):
 	return render(request, 'employees_list.html',
 				{'items': items})
 
+
 class EmployeeForm(ModelForm):
 
 	class Meta:
 		model = Employee
+		
 
 def create_view(request, id=None):
 	if id is not None:
@@ -46,7 +48,7 @@ def create_view(request, id=None):
 			employee = form.save()
 			return redirect(reverse('employee_one', args=[employee.id]))
 	else:
-		form = EmployeeForm()
+		form = EmployeeForm(instance=employee)
 
 	return render(request,'employee_create.html',{
 					'form': form, 'employee': employee})
