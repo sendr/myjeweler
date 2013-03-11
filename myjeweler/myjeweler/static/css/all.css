@@ -115,6 +115,7 @@ p{
 	margin: 0 0 10px 10px;
 }
 .form{
-	width:260px;
+	width: 255px;
+	overflow: hidden;
 	margin: 10px auto;
 }

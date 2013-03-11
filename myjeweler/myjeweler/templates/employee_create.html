@@ -4,9 +4,11 @@
 
 
 {% block content %}
-	<div class='form'>
-		<form action='GET'>
-			{{ form }}
+	<div class="form">
+		<form method="GET">
+			<ul>
+				<li>{{ form }}</li>
+			</ul>
 			<input type='submit' value='submit'/>
 		</form>
 	</div>

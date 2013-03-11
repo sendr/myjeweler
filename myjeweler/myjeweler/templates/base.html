@@ -14,7 +14,7 @@
 		<li><a href="{% url 'employees_group_view'%}"{% block employee_class %}{% endblock %}>Категория сотрудников</a></li>
 		<li><a href="{% url 'create' %}"{% block employee_create_class %}{% endblock %}>Create</a></li>
 			<div class="right">
-				<a href="">Гость</a>
+				<a href="">{{ user }}</a>
 				<a href="{% url 'enter' %}"{% block enter_class %}{% endblock %}>Вход</a>
 				<a href="{% url 'registration' %}" {% block registration_class %}{% endblock %}>Регистрация</a>
 			</div>
