@@ -20,8 +20,6 @@ def photo_rings1(request):
 def photo_earrings1(request):
 	return render(request, "photo_earrings1.html")
 
-def enter(request):
-	return render(request, "enter.html")
 
 def registration(request):
 	return render(request, "registration.html")
