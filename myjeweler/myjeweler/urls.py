@@ -10,7 +10,6 @@ urlpatterns = patterns('',
 	url(r'^earrings/$', 'myjeweler.views.earrings', name='earrings'),
 	url(r'^pendants/$', 'myjeweler.views.pendants', name='pendants'),
     url(r'^rings/photo_rings1/$', 'myjeweler.views.photo_rings1', name='photo1'),
-    url(r'^enter/$', 'myjeweler.apps.employees.views.enter', name='enter'),
     url(r'^registration/$', 'myjeweler.views.registration', name='registration'),
     url(r'^earrings/photo_earrings1/$', 'myjeweler.views.photo_earrings1', name='photo_earrings1'),
     url(r'^rings/photo_rings1/photo1/$', 'myjeweler.views.photo1', name='photo1'),
@@ -18,6 +17,10 @@ urlpatterns = patterns('',
     url(r'^edit/(?P<id>\d+)/$', 'myjeweler.apps.employees.views.create_view', name='edit'),
 
     url(r'^employees_group_view/', include('myjeweler.apps.employees.urls')),
+
+    url(r'^accounts/login_view/$', 'myjeweler.apps.employees.views.login_view', name="login_view"),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', name="login"),
+    url(r'^accounts/logout/$', 'myjeweler.apps.employees.views.logout_view', name="logout"),
 
 
     # Examples:

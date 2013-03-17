@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from myjeweler.apps.employees.models import Group, Employee
 from django.forms import ModelForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout,login, authenticate
 
 
 
@@ -58,7 +59,9 @@ def create_view(request, id=None):
 					'form': form, 'employee': employee})
 
 
-def enter(request):
-	form = EmployeeForm()
-	return render(request, "enter.html", {
-				'form': form})
+def login_view(login):
+	return redirect(reverse('login') + '?next=%s' % reverse('index'))
+
+def logout_view(request):
+	logout(request)
+	return redirect(reverse('index'))

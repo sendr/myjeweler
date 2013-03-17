@@ -5,7 +5,13 @@
 {% block index_class_ %} class="active" {% endblock %}
 
 {% block content %}
-			<h3>Добро пожаловать,<a href="/registration/">гость</a>!</h3>
+			<h3>Добро пожаловать,
+				{% if user.is_authenticated%}
+				 {{ user }}!
+				{% else%}
+				<a href="">гость</a>
+				{% endif%}
+			</h3>
 			<p>Здесь Вы найдете то, что Вам нужно!)</p>
 			<p>Пока фантазии хватило только на это.</p>
 {% endblock content %}
