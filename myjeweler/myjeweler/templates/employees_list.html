@@ -11,7 +11,9 @@
 			{% for item in items%}
 			<ul>
 				<li> <h3>{{ item.id}}. {{ item.first_name }} {{ item.last_name }}</h3> {{ item.group}}
+					{% if user.is_superuser %}
 					<p><a href="{% url 'edit' item.id %}">Edit employee</a></p></li>				
+					{% endif %}
 			</ul>
 			{% endfor %}
 

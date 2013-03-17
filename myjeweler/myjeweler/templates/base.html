@@ -10,8 +10,10 @@
 		<li><a href="{% url 'rings' %}" {% block rings_class %}{% endblock %}>Кольца</a></li>
 		<li><a href="{% url 'earrings' %}" {% block earrings_class %}{% endblock %}>Серьги</a></li>
 		<li><a href="{% url 'pendants' %}" {% block pendants_class %}{% endblock %}>Подвесы</a></li>
-		{% if user.is_superuser %}
+		{% if user.is_authenticated %}
 		<li><a href="{% url 'employees_list' %}"{% block employee_list_class %}{% endblock %}>Список сотрудников</a></li>
+		{% endif %}
+		{% if user.is_superuser %}
 		<li><a href="{% url 'employees_group_view'%}"{% block employee_class %}{% endblock %}>Категория сотрудников</a></li>
 		<li><a href="{% url 'create' %}"{% block employee_create_class %}{% endblock %}>Create</a></li>
 		{% endif %}
@@ -24,7 +26,7 @@
 				{% if user.is_authenticated %}
 				<a href="{% url 'logout' %}">Выход</a>
 				{% endif %}
-				<a href="{% url 'registration' %}" {% block registration_class %}{% endblock %}>Регистрация</a>
+				<a href="{% url 'registration_register' %}" {% block registration_class %}{% endblock %}>Регистрация</a>
 			</div>
 		</ul>
 		<div class="container">

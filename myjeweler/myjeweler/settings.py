@@ -121,8 +121,10 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'registration',
 
     # Uncomment the next line to enable the admin:
+    
     'django.contrib.admin',
     'south',
     'myjeweler.apps.employees',
@@ -159,3 +161,5 @@ LOGGING = {
         },
     }
 }
+ACCOUNT_ACTIVATION_DAYS = 7
+EMAIL_PORT = 1025

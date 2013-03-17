@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.core.urlresolvers import reverse
 
 
 def index(request):
@@ -19,10 +20,6 @@ def photo_rings1(request):
 
 def photo_earrings1(request):
 	return render(request, "photo_earrings1.html")
-
-
-def registration(request):
-	return render(request, "registration.html")
 
 def photo1(request):
 	return render(request, "photo1.html")

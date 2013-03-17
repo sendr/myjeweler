@@ -1,0 +1,2 @@
+
+Для активации Вашего аккаунта пройдите по ссылке: http://{{ site }}/accounts/activate/{{ activation_key }}/
