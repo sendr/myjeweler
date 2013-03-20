@@ -9,7 +9,7 @@
 				{% if user.is_authenticated%}
 				 {{ user }}!
 				{% else%}
-				<a href="">гость</a>
+				<a href="{% url 'registration_register' %}">гость</a>
 				{% endif%}
 			</h3>
 			<p>Здесь Вы найдете то, что Вам нужно!)</p>
