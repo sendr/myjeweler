@@ -65,3 +65,6 @@ def login_view(login):
 def logout_view(request):
 	logout(request)
 	return redirect(reverse('index'))
+
+def login_view_test(request):
+	pass

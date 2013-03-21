@@ -122,12 +122,16 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registration',
+    'wpadmin',
+    'wpadmin.menu',
+    'wpadmin.dashboard',
 
     # Uncomment the next line to enable the admin:
     
     'django.contrib.admin',
     'south',
     'myjeweler.apps.employees',
+    'myjeweler.apps.silver_adornment',
 
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
@@ -161,5 +165,27 @@ LOGGING = {
         },
     }
 }
+TEMPLATE_CONTEXT_PROCESSORS = (
+"django.core.context_processors.request",    
+"django.contrib.auth.context_processors.auth",
+"django.core.context_processors.debug",
+"django.core.context_processors.i18n",
+"django.core.context_processors.media",
+"django.core.context_processors.static",
+"django.core.context_processors.tz",
+"django.contrib.messages.context_processors.messages",
+
+)
+
+WPADMIN = {
+    'admin': {
+        'menu': {
+            'top': 'wpadmin.menu.menus.TopMenu',
+            'left': 'wpadmin.menu.menus.LeftMenu',
+        }
+    },
+}
+
+
 ACCOUNT_ACTIVATION_DAYS = 7
 EMAIL_PORT = 1025

@@ -19,7 +19,7 @@
 		{% endif %}
 			<div class="right">
 				{% if user.is_superuser%}
-				<a href="">admin</a>
+				<a href="/admin/">admin</a>
 				{% endif %}
 				<a href="">{% if user.is_authenticated %} {{ user }} {% endif %}</a>
 				<a href="{% url 'login_view' %}"{% block enter_class %}{% endblock %}>Вход</a>
