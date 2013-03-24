@@ -1,13 +1,17 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.urlresolvers import reverse
+from myjeweler.apps.silver_adornment.models import SilverRings
 
 
 def index(request):
 	return render(request, "index.html")
 
 def rings(request):
-	return render(request, "rings.html")
+	rings = SilverRings.objects.all()
+	return render(request, "rings.html", {
+		'rings': rings
+		})
 
 def earrings(request):
 	return render(request, "earrings.html")

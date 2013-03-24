@@ -5,8 +5,13 @@
 {% block rings_class_ %} class="active" {% endblock %}
 
 {% block content %}
-			<h3><a href="#">Обручальные</a></h3>
-			<h3><a href="/rings/photo_rings1">Кольца со вставками</a></h3>
-			<h3><a href="#">Кольца без вставок</a></h3>
-			<h3><a href="#">Перстни</a></h3>
+			<div>
+				<ul>
+					{% for ring in rings %}
+					<li>
+						{{forloop.counter}}. <img src="{{ ring.image }}" class='image_ring'> {{ring.name}}
+					</li>
+					{% endfor %}
+				</ul>	
+			</div>
 {% endblock content %}

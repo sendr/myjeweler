@@ -93,6 +93,10 @@ body{
 .form_form{
 	float: left;
 }
+.image_ring{
+	width: 60px;
+	height: 60px;
+}
 .image{
 	margin: 20px auto;
 	width: 800px;
