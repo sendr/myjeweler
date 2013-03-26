@@ -12,7 +12,7 @@ class Sex(models.Model):
 class SilverRings(models.Model):
 
 	sex = models.ForeignKey(Sex)
-	image = models.ImageField(upload_to = 'rings/', blank = True, null = True)
+	image = models.ImageField(upload_to = 'rings', blank = True, null = True)
 	name = models.CharField(max_length = 50)
 	art = models.CharField(max_length = 50)
 	weigth = models.CharField(max_length = 50)
@@ -40,7 +40,7 @@ class TypeEarrings(models.Model):
 class SilverEarrings(models.Model):
 
 	type_earrings = models.ForeignKey(TypeEarrings)
-	image = models.FileField(upload_to = 'rings', blank = True, null = True)
+	image = models.FileField(upload_to = 'media', blank = True, null = True)
 	name = models.CharField(max_length = 50)
 	art = models.CharField(max_length = 50)
 	weigth = models.CharField(max_length = 50)
