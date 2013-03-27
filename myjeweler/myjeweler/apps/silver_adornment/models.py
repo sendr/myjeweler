@@ -1,21 +1,26 @@
 from django.db import models
+# -*- coding: utf-8 -*-
 
+# class Sex(models.Model):
 
-class Sex(models.Model):
+# 	name = models.CharField(max_length = 20)
 
-	name = models.CharField(max_length = 20)
-
-	def __unicode__(self):
-		return self.name
+# 	def __unicode__(self):
+# 		return self.name
 
 
 class SilverRings(models.Model):
 
-	sex = models.ForeignKey(Sex)
+	SEX = (
+		(u'Мужское', 'Men'),
+		(u'Женское', 'Woman'),
+		(u'Унисекс', 'Unisex'),
+		)
 	image = models.ImageField(upload_to = 'rings', blank = True, null = True)
 	name = models.CharField(max_length = 50)
 	art = models.CharField(max_length = 50)
 	weigth = models.CharField(max_length = 50)
+	sex = models.CharField(max_length = 10, choices = SEX)
 
 	class Meta:
 		verbose_name = 'SilverRing'

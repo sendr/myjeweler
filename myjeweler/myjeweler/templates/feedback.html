@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+			<div>
+				<h3>Обратная связь</h3>
+				<form action="{% url 'feedback'%}" method="POST" class="form">
+					{% csrf_token %}
+					{{form}}
+					<input type='submit'>
+				</form>	
+			</div>
+{% endblock content %}

@@ -21,6 +21,10 @@ class Migration(SchemaMigration):
             ('group', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['employees.Group'])),
             ('first_name', self.gf('django.db.models.fields.CharField')(max_length=30)),
             ('last_name', self.gf('django.db.models.fields.CharField')(max_length=30)),
+            ('skype', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
+            ('email', self.gf('django.db.models.fields.EmailField')(max_length=255, null=True, blank=True)),
+            ('github', self.gf('django.db.models.fields.URLField')(max_length=255, null=True, blank=True)),
+            ('cell', self.gf('django.db.models.fields.CharField')(max_length=15, null=True, blank=True)),
         ))
         db.send_create_signal(u'employees', ['Employee'])
 
@@ -36,10 +40,14 @@ class Migration(SchemaMigration):
     models = {
         u'employees.employee': {
             'Meta': {'object_name': 'Employee'},
+            'cell': ('django.db.models.fields.CharField', [], {'max_length': '15', 'null': 'True', 'blank': 'True'}),
+            'email': ('django.db.models.fields.EmailField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
             'first_name': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
+            'github': ('django.db.models.fields.URLField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
             'group': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['employees.Group']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'last_name': ('django.db.models.fields.CharField', [], {'max_length': '30'})
+            'last_name': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
+            'skype': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'})
         },
         u'employees.group': {
             'Meta': {'object_name': 'Group'},

@@ -12,7 +12,10 @@ urlpatterns = patterns('',
 	url(r'^pendants/$', 'myjeweler.views.pendants', name='pendants'),
     url(r'^rings/photo_rings1/$', 'myjeweler.views.photo_rings1', name='photo1'),
     url(r'^earrings/photo_earrings1/$', 'myjeweler.views.photo_earrings1', name='photo_earrings1'),
-    url(r'^rings/photo_rings1/photo1/$', 'myjeweler.views.photo1', name='photo1'),
+
+    url(r'^feedback/$', 'myjeweler.views.feedback_view', name='feedback'),
+
+
     url(r'^create/$', 'myjeweler.apps.employees.views.create_view', name='create'),
     url(r'^edit/(?P<id>\d+)/$', 'myjeweler.apps.employees.views.create_view', name='edit'),
 
@@ -38,8 +41,7 @@ urlpatterns = patterns('',
 
 if settings.DEBUG:
     urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', "django.contrib.staticfiles.views.serve",
-         {'document_root': settings.STATIC_ROOT}),
-        (r'^media/(?P<path>.*)$', "django.contrib.staticfiles.views.serve",
-         {'document_root': settings.MEDIA_ROOT}),
-    )
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+   )

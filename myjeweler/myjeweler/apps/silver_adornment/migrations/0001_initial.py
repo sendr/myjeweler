@@ -8,21 +8,14 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'Sex'
-        db.create_table(u'silver_adornment_sex', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=20)),
-        ))
-        db.send_create_signal(u'silver_adornment', ['Sex'])
-
         # Adding model 'SilverRings'
         db.create_table(u'silver_adornment_silverrings', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('sex', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['silver_adornment.Sex'], unique=True)),
-            ('image', self.gf('django.db.models.fields.files.FileField')(max_length=100, null=True, blank=True)),
+            ('image', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
             ('art', self.gf('django.db.models.fields.CharField')(max_length=50)),
             ('weigth', self.gf('django.db.models.fields.CharField')(max_length=50)),
+            ('sex', self.gf('django.db.models.fields.CharField')(max_length=2)),
         ))
         db.send_create_signal(u'silver_adornment', ['SilverRings'])
 
@@ -36,7 +29,7 @@ class Migration(SchemaMigration):
         # Adding model 'SilverEarrings'
         db.create_table(u'silver_adornment_silverearrings', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('type_earrings', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['silver_adornment.TypeEarrings'], unique=True)),
+            ('type_earrings', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['silver_adornment.TypeEarrings'])),
             ('image', self.gf('django.db.models.fields.files.FileField')(max_length=100, null=True, blank=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
             ('art', self.gf('django.db.models.fields.CharField')(max_length=50)),
@@ -55,7 +48,7 @@ class Migration(SchemaMigration):
         db.create_table(u'silver_adornment_pendants', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('type_pendants', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['silver_adornment.TypePendants'], unique=True)),
-            ('image', self.gf('django.db.models.fields.files.FileField')(max_length=100, null=True, blank=True)),
+            ('image', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
             ('art', self.gf('django.db.models.fields.CharField')(max_length=50)),
             ('weigth', self.gf('django.db.models.fields.CharField')(max_length=50)),
@@ -64,9 +57,6 @@ class Migration(SchemaMigration):
 
 
     def backwards(self, orm):
-        # Deleting model 'Sex'
-        db.delete_table(u'silver_adornment_sex')
-
         # Deleting model 'SilverRings'
         db.delete_table(u'silver_adornment_silverrings')
 
@@ -88,15 +78,10 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Pendants'},
             'art': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image': ('django.db.models.fields.files.FileField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
+            'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'type_pendants': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['silver_adornment.TypePendants']", 'unique': 'True'}),
             'weigth': ('django.db.models.fields.CharField', [], {'max_length': '50'})
-        },
-        u'silver_adornment.sex': {
-            'Meta': {'object_name': 'Sex'},
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '20'})
         },
         u'silver_adornment.silverearrings': {
             'Meta': {'object_name': 'SilverEarrings'},
@@ -104,16 +89,16 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'image': ('django.db.models.fields.files.FileField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'type_earrings': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['silver_adornment.TypeEarrings']", 'unique': 'True'}),
+            'type_earrings': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['silver_adornment.TypeEarrings']"}),
             'weigth': ('django.db.models.fields.CharField', [], {'max_length': '50'})
         },
         u'silver_adornment.silverrings': {
             'Meta': {'object_name': 'SilverRings'},
             'art': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image': ('django.db.models.fields.files.FileField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
+            'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'sex': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['silver_adornment.Sex']", 'unique': 'True'}),
+            'sex': ('django.db.models.fields.CharField', [], {'max_length': '2'}),
             'weigth': ('django.db.models.fields.CharField', [], {'max_length': '50'})
         },
         u'silver_adornment.typeearrings': {

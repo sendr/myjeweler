@@ -18,6 +18,7 @@
 		<li><a href="{% url 'create' %}"{% block employee_create_class %}{% endblock %}>Create</a></li>
 		{% endif %}
 			<div class="right">
+				<a href="{% url 'feedback' %}">Feedback</a>
 				{% if user.is_superuser%}
 				<a href="{% url 'admin:index'%}">Админка</a>
 				{% endif %}

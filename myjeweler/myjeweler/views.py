@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.urlresolvers import reverse
 from myjeweler.apps.silver_adornment.models import SilverRings
+from django import forms
 
 
 def index(request):
@@ -12,6 +13,19 @@ def rings(request):
 	return render(request, "rings.html", {
 		'rings': rings
 		})
+
+
+class ContactForm(forms.Form):
+	name = forms.CharField()
+	email = forms.EmailField()
+	text = forms.CharField(widget=forms.Textarea)
+
+
+def feedback_view(request):
+	form = ContactForm()
+	return render(request, "feedback.html",{
+						'form': form
+					})
 
 def earrings(request):
 	return render(request, "earrings.html")
