@@ -7,7 +7,7 @@
 				<form action="{% url 'feedback'%}" method="POST" class="form">
 					{% csrf_token %}
 					{{form}}
-					<input type='submit'>
+					<input type='submit' value="send">
 				</form>	
 			</div>
 {% endblock content %}

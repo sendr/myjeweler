@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.urlresolvers import reverse
 from myjeweler.apps.silver_adornment.models import SilverRings
 from django import forms
+from django.core.mail import send_mail
 
 
 def index(request):
@@ -22,10 +23,17 @@ class ContactForm(forms.Form):
 
 
 def feedback_view(request):
-	form = ContactForm()
+
+	if request.method == "POST":
+		form = ContactForm(request.POST)
+		if form.is_valid():			
+			data = form.cleaned_data
+			send_mail("Message form from Myjewelry", data['text'], data['email'], ["sendr84@gmail.com"] )
+			return redirect(reverse("feedback"))
+	else:
+		form = ContactForm()
 	return render(request, "feedback.html",{
-						'form': form
-					})
+						'form': form})
 
 def earrings(request):
 	return render(request, "earrings.html")

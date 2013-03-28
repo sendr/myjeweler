@@ -123,3 +123,9 @@ p{
 	overflow: hidden;
 	margin: 10px auto;
 }
+.form input {
+	width: 100%;
+}
+.submit {
+	width: 50px;
+}
