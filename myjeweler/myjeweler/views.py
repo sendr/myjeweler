@@ -1,9 +1,14 @@
+# -*- coding: utf-8 -*-
+from datetime import datetime 
+
+from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.urlresolvers import reverse
 from myjeweler.apps.silver_adornment.models import SilverRings
 from django import forms
 from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 
 def index(request):
@@ -28,7 +33,10 @@ def feedback_view(request):
 		form = ContactForm(request.POST)
 		if form.is_valid():			
 			data = form.cleaned_data
-			send_mail("Message form from Myjewelry", data['text'], data['email'], ["sendr84@gmail.com"] )
+			data['date'] = datetime.now()
+			message = render_to_string('my_feedback.txt', data)
+			send_mail("Message form from Myjewelry", message, data['email'], ["sendr84@gmail.com"] )
+			messages.success(request, u'Сообщение было успешно отправлено')
 			return redirect(reverse("feedback"))
 	else:
 		form = ContactForm()
