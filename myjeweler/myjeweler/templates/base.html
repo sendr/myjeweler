@@ -33,7 +33,7 @@
 		<div class="container">
 		<div class="sidebar">
 			<ul>
-				<li><a href="/" {% block index_class_ %}{% endblock %}>Home</a></li>
+				<li><a href="{% url 'index' %}" {% block index_class_ %}{% endblock %}>Home</a></li>
 				<li><a href="{% url 'rings' %}" {% block rings_class_ %}{% endblock %}>Rings</a></li>
 				<li><a href="{% url 'earrings' %}" {% block earrings_class_ %}{% endblock %}>Earrings</a></li>
 				<li><a href="{% url 'pendants' %}" {% block pendants_class_ %}{% endblock %}>Pendants</a></li>

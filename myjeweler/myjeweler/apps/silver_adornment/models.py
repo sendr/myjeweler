@@ -45,7 +45,7 @@ class TypeEarrings(models.Model):
 class SilverEarrings(models.Model):
 
 	type_earrings = models.ForeignKey(TypeEarrings)
-	image = models.FileField(upload_to = 'media', blank = True, null = True)
+	image = models.FileField(upload_to = 'earrings', blank = True, null = True)
 	name = models.CharField(max_length = 50)
 	art = models.CharField(max_length = 50)
 	weigth = models.CharField(max_length = 50)
@@ -73,7 +73,7 @@ class TypePendants(models.Model):
 class Pendants(models.Model):
 
 	type_pendants = models.OneToOneField(TypePendants)
-	image = models.ImageField(upload_to = 'media', blank = True, null = True)
+	image = models.ImageField(upload_to = 'pendants', blank = True, null = True)
 	name = models.CharField(max_length = 50)
 	art = models.CharField(max_length = 50)
 	weigth = models.CharField(max_length = 50)

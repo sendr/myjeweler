@@ -9,7 +9,20 @@
 				<ul>
 					{% for ring in rings %}
 					<li>
-						<img src="{{ ring.image.url }}" class = "image_ring">{{forloop.counter}}. {{ring.name}}, {{ring.sex }}
+						<table style="border: 1px solid; width:400px;">
+							<tr>
+								<td>Фото:</td>
+								<td>Название:</td>
+								<td>Пол:</td>
+								<td>Вес:</td>
+							</tr>
+							<tr>	
+								<td><img src="{{ ring.image.url }}" class = "image_ring"></td>
+								<td>{{ring.name}}</td>
+								<td>{{ring.sex }}</td>
+								<td>{{ ring.weigth }}</td>
+							</tr>
+						</table>
 					</li>
 					{% endfor %}
 				</ul>	
