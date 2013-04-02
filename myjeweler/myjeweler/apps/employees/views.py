@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, get_object_or_404, redirect
 from myjeweler.apps.employees.models import Group, Employee
@@ -7,12 +9,24 @@ from django.contrib.auth import logout,login, authenticate
 
 
 
+class GroupForm(ModelForm):
+
+	class Meta:
+		model = Group
+
 @login_required
 def employees_group_view(request):
 
 	groups = Group.objects.all()
+	form = GroupForm(request.GET)
+	if form.is_valid():
+			groups = form.save()
+			return redirect(reverse('employees_group_view'))
+	else:
+		form = GroupForm()
 	return render(request, "employees.html",
-					{'groups': groups })
+					{'groups': groups,
+					'form': form })
 
 @login_required
 def employees_group_list(request, id):

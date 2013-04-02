@@ -10,5 +10,11 @@
 			 {{ forloop.counter }}. {{ group.name }}</a></h3>
 			
 			{% endfor %}
+			{% if user.is_superuser%}
+			 <p>Add group:</p>
+			 <form method="GET">
+			 	{{ form }}
+			 </form>
+			 {% endif %}
 
 {% endblock content %}
