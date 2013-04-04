@@ -49,6 +49,7 @@ def earrings(request):
 		'earrings': earrings,
 		})
 
+
 def pendants(request):
 	return render(request, "pendants.html")
 
