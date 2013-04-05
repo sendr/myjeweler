@@ -27,6 +27,8 @@ urlpatterns = patterns('',
 
     url(r'^accounts/', include('registration.backends.default.urls')),
 
+    url(r'^comments/', include('django.contrib.comments.urls')),
+
 
     # Examples:
     # url(r'^$', 'myjeweler.views.home', name='home'),

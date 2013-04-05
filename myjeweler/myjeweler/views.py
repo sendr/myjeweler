@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime 
 
+
 from django.contrib import messages
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.urlresolvers import reverse
 from myjeweler.apps.silver_adornment.models import SilverRings, SilverEarrings, TypeEarrings
 from django import forms
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def index(request):
@@ -44,9 +47,16 @@ def feedback_view(request):
 						'form': form})
 
 def earrings(request):
-	earrings = SilverEarrings.objects.all() 
+	earrings = SilverEarrings.objects.all()
+	paginator = Paginator(earrings, 5)
+	page = request.GET.get('page', 1)
+	try:
+		earrings = paginator.page(page)
+	except (PageNotAnInteger, EmptyPage):
+		raise Http404
 	return render(request, "earrings.html", {
 		'earrings': earrings,
+		'next': reverse('earrings')
 		})
 
 

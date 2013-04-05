@@ -4,10 +4,30 @@
 
 {% block earrings_class_ %} class="active" {% endblock %}
 
+{% load comments %}
+
 
 {% block content %}
+				
+
 			<div>
 				<ul>
+					<div class="pagination">
+    					<span class="step-links">
+        					{% if earrings.has_previous %}
+            				<a href="?page={{ earrings.previous_page_number }}">previous</a>
+        					{% endif %}
+
+        					<span class="current">
+            					Page {{ earrings.number }} of {{ earrings.paginator.num_pages }}.
+        					</span>
+
+        					{% if earrings.has_next %}
+            				<a href="?page={{ earrings.next_page_number }}">next</a>
+        					{% endif %}
+    					</span>
+					</div>
+	
 					{% for earring in earrings %}
 					<li>
 						<table cellpadding="3" style="border: 1px solid; width:400px; margin:0 0 10px">
@@ -23,7 +43,30 @@
 								<td>{{earring.type_earrings }}</td>
 								<td>{{ earring.weigth }}</td>
 							</tr>
+							<tr>
+							</tr>
+						{% include "comments/form.html" %}
+								<td>{% get_comment_form for earring as form %}
+
+									{% get_comment_list for earring as comment_list %}
+									{% for comment in comment_list %}
+									{{ comment.user_name }}: {{ comment.comment }}
+
+									{% endfor %}
+								</td>
 						</table>
+						<!-- <table>
+						  <form action="{% comment_form_target %}" method="post">
+						    {% csrf_token %}
+						    {{ form }}
+						    <tr>
+						      <td colspan="2">
+						        <input type="submit" name="submit" value="Post">
+						        <input type="submit" name="preview" value="Preview">
+						      </td>
+						    </tr>
+						  </form>
+						</table> -->
 					</li>
 					{% endfor %}
 				</ul>	

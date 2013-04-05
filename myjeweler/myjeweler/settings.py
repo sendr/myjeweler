@@ -2,6 +2,7 @@
 
 import os
 
+DEBUG = False
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -121,6 +122,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.comments',
     'registration',
     'wpadmin',
     'wpadmin.menu',
