@@ -8,9 +8,14 @@
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
-<form method="post" action="{% url 'registration_register' %}" class="form">
+<form method="post" action="{% url 'registration_register' %}">
 {% csrf_token %}
-{{ form }}
+{% for string in form %}
+<p>{{ string.label }}</p>
+<p>{{ string }}</p>
+{% endfor %}
+
+
 
 <input type="submit" value="register" />
 </form>

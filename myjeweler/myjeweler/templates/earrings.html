@@ -45,14 +45,30 @@
 							</tr>
 							<tr>
 							</tr>
+								<td>
+									<div id="accordion">
+  										<h3>Комментарий</h3>
+												  <div>
+												    <!-- <p> -->
+												    	{% get_comment_form for earring as form %}
+														{% include "comments/form.html" %}
+
+														{% get_comment_list for earring as comment_list %}
+													<!-- </p> -->
+												  </div>
+														{% for comment in comment_list %}
+														{{ comment.user_name }}: {{ comment.comment }}
+
+														{% endfor %}
+									<!-- <div>{% get_comment_form for earring as form %}
 						{% include "comments/form.html" %}
-								<td>{% get_comment_form for earring as form %}
 
 									{% get_comment_list for earring as comment_list %}
 									{% for comment in comment_list %}
 									{{ comment.user_name }}: {{ comment.comment }}
 
 									{% endfor %}
+									</div> -->
 								</td>
 						</table>
 						<!-- <table>
