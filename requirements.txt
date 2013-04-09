@@ -1,0 +1,4 @@
+django==1.5.1
+south==0.7.6
+-e hg+https://bitbucket.org/alekam/django-registration#egg=registration
+-e git+https://github.com/barszczmm/django-wpadmin.git#egg=django-wpadmin

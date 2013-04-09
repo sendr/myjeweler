@@ -3,8 +3,6 @@
 *.pyc
 .gitignore~
 .gitignore
-requirements.txt
-requirements.txt~
 myjew.*
 tt.db
 *.gif
